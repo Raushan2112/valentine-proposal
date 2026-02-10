@@ -3,71 +3,46 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Valentine Surprise 💖</title>
+<title>Valentine 💖</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
+  margin: 0;
   height: 100vh;
-  overflow: hidden;
-  background: linear-gradient(135deg, #ff4e8a, #ff1b6b, #9b2cff);
+  background: linear-gradient(135deg, #ff4e8a, #9b2cff);
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Poppins', sans-serif;
+  font-family: Arial, sans-serif;
   color: white;
-}
-
-/* Floating hearts */
-.heart {
-  position: absolute;
-  animation: floatUp linear infinite;
-  opacity: 0.8;
-}
-
-@keyframes floatUp {
-  from { transform: translateY(100vh); }
-  to { transform: translateY(-10vh); }
+  text-align: center;
 }
 
 /* Main box */
-.container {
-  text-align: center;
+#question {
   padding: 20px;
-  max-width: 95%;
 }
 
 h1 {
   font-family: 'Pacifico', cursive;
   font-size: 2.2rem;
-  text-shadow: 0 0 20px white;
 }
 
 /* Buttons */
-.buttons {
-  margin-top: 30px;
-}
-
 button {
-  padding: 14px 32px;
-  font-size: 1.2rem;
+  padding: 14px 30px;
+  font-size: 18px;
   border: none;
-  border-radius: 50px;
-  cursor: pointer;
+  border-radius: 30px;
   margin: 10px;
+  cursor: pointer;
 }
 
 #yesBtn {
-  background: linear-gradient(45deg, #ff4d6d, #ff85a2);
+  background: #ff4d6d;
   color: white;
-  box-shadow: 0 0 20px #ff85a2;
 }
 
 #noBtn {
@@ -75,7 +50,7 @@ button {
   color: white;
 }
 
-/* Celebration screen */
+/* Celebration */
 #celebration {
   display: none;
   position: fixed;
@@ -83,62 +58,31 @@ button {
   background: rgba(0,0,0,0.4);
   backdrop-filter: blur(8px);
   padding: 40px 20px;
-  text-align: center;
   overflow-y: auto;
 }
 
 #celebration h2 {
-  font-size: 2.2rem;
-  margin-bottom: 20px;
+  font-size: 2rem;
 }
 
-.message {
-  max-width: 700px;
-  margin: auto;
-  background: rgba(255,255,255,0.1);
-  padding: 25px;
-  border-radius: 20px;
-  line-height: 1.6;
-}
-
-/* NO popup */
+/* NO popup (IMPORTANT: display NONE only once) */
 #noPopup {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.65);
-  backdrop-filter: blur(6px);
-  z-index: 99;
-  display: flex;
+  background: rgba(0,0,0,0.7);
+  z-index: 100;
   align-items: center;
   justify-content: center;
 }
 
-.popup-box {
+#noPopupBox {
   background: black;
   border: 2px solid red;
   color: red;
   padding: 20px 25px;
   border-radius: 14px;
-  text-align: center;
   font-size: 1.1rem;
-  box-shadow: 0 0 20px red;
-}
-
-/* Music button */
-#musicBtn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: rgba(255,255,255,0.2);
-  color: white;
-  border: none;
-  padding: 10px 16px;
-  border-radius: 30px;
-  font-size: 0.9rem;
-  backdrop-filter: blur(6px);
-  cursor: pointer;
-  z-index: 100;
 }
 </style>
 </head>
@@ -146,86 +90,53 @@ button {
 <body>
 
 <!-- Music -->
-<audio id="bgMusic" loop>
+<audio id="music">
   <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_7b4c8e5c3b.mp3" type="audio/mpeg">
 </audio>
 
-<!-- Music Button -->
-<button id="musicBtn">🔊 Play Music</button>
-
 <!-- Question -->
-<div class="container" id="questionBox">
+<div id="question">
   <h1>
     Kashish, Chhoti Cutiee 💖<br>
     WILL YOU BE MY VALENTINE?
   </h1>
-
-  <div class="buttons">
-    <button id="yesBtn">Yes ❤️😘</button>
-    <button id="noBtn">No 🙈</button>
-  </div>
+  <button id="yesBtn">Yes ❤️😘</button>
+  <button id="noBtn">No 🙈</button>
 </div>
 
 <!-- Celebration -->
 <div id="celebration">
   <h2>💖 I KNEW YOU LOVE ME 💖</h2>
-
-  <div class="message">
-    <p><strong>Buggu..</strong> I know we both have gone through a lot in our lives. There were many ups and downs, many painful moments, and phases where everything felt confusing and heavy. Life tested us in different ways, but somehow we are still here...</p>
-
-    <p>What has happened in the past is done now. We cannot change it and we don’t want to live in it anymore. From here, we want to move forward together with positive vibes, understanding, and patience.</p>
-
-    <p>We promise that no matter how hard things get, we will talk, we will support each other and we will stand by each other. Growth, studies, career, life everything will be better when we walk side by side.</p>
-
-    <p><strong>No matter what comes, we choose each other. Always. ❤️</strong></p>
-
-    <p><strong>Love you a lot !!</strong></p>
-  </div>
+  <p><strong>Buggu..</strong> I know we both have gone through a lot in our lives.</p>
+  <p>No matter what comes, we choose each other. Always. ❤️</p>
+  <p><strong>Love you a lot !!</strong></p>
 </div>
 
 <!-- NO popup -->
 <div id="noPopup">
-  <div class="popup-box">
+  <div id="noPopupBox">
     ❌ Invalid choice.<br><br>
     System has detected you are already my Valentine.
   </div>
 </div>
 
 <script>
-/* Floating hearts */
-const hearts = ["❤️","💖","💘","💝","💕","💞","💓"];
-setInterval(() => {
-  const h = document.createElement("div");
-  h.className = "heart";
-  h.innerText = hearts[Math.floor(Math.random()*hearts.length)];
-  h.style.left = Math.random()*100 + "vw";
-  h.style.fontSize = 16 + Math.random()*30 + "px";
-  h.style.animationDuration = 3 + Math.random()*3 + "s";
-  document.body.appendChild(h);
-  setTimeout(()=>h.remove(),6000);
-},300);
+const yesBtn = document.getElementById("yesBtn");
+const noBtn = document.getElementById("noBtn");
+const popup = document.getElementById("noPopup");
+const music = document.getElementById("music");
 
-/* Music control */
-const music = document.getElementById("bgMusic");
-const musicBtn = document.getElementById("musicBtn");
-
-musicBtn.addEventListener("click", () => {
+yesBtn.addEventListener("click", () => {
   music.play();
-  musicBtn.innerText = "🎵 Music Playing";
-});
-
-/* NO click */
-document.getElementById("noBtn").addEventListener("click", () => {
-  const popup = document.getElementById("noPopup");
-  popup.style.display = "flex";
-  setTimeout(() => popup.style.display = "none", 2500);
-});
-
-/* YES click */
-document.getElementById("yesBtn").addEventListener("click", () => {
-  document.getElementById("questionBox").style.display = "none";
+  document.getElementById("question").style.display = "none";
   document.getElementById("celebration").style.display = "block";
-  music.play();
+});
+
+noBtn.addEventListener("click", () => {
+  popup.style.display = "flex";
+  setTimeout(() => {
+    popup.style.display = "none";
+  }, 2000);
 });
 </script>
 
